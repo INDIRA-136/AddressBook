@@ -26,7 +26,41 @@ void saveAndExit(AddressBook *addressBook) {
 
 void createContact(AddressBook *addressBook)
 {
-	/* Define the logic to create a Contacts */
+	int found=0;
+    printf("Enter name:");
+    scanf("%[^\n]",contacts[contactCount].name);
+    if(strlen(contacts[contactCount].name) >= 2)
+    {
+        for(int i=0;i<strlen(contacts[contactCount].name;i++)
+        if(contacts[contactCount].name[i] >= 'A' && contacts[contactCount].name[i] <= 'Z' || contacts[contactCount].name[i] >= 'a'&& contacts[contactCount].name[i] <= 'z'|| contacts[contactCount].name[i] == ' ')
+        {
+            found=1;
+        }
+        
+    }
+    else
+    {
+        found=0;
+        printf("Error");
+    }
+    while(found==0)
+    {
+        found=1;
+        printf("Enter a valid name:");
+        scanf("%[^\n]",contacts[contactCount].name);
+        if(strlen(contacts[contactCount].name) >= 2)
+         {
+            found=1;
+            for(int i=0;i<strlen(contacts[contactCount].name;i++)
+            {
+                if(contacts[contactCount].name[i] >= 'A' && contacts[contactCount].name[i] <= 'Z' || contacts[contactCount].name[i] >= 'a'&& contacts[contactCount].name[i] <= 'z'|| contacts[contactCount].name[i] == ' ')
+                 {
+                    found=0;
+                    break;
+                 }
+            }
+         }
+    }/* Define the logic to create a Contacts */
     
 }
 
